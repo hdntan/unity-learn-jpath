@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpinPropellerX : MonoBehaviour
+public class SpinPropellerX1 : MonoBehaviour
 {
     public float rotationSpeed = 1000f; // Speed of rotation in degrees per second
     // Start is called once before the first execution of Update after the MonoBehaviour is created
