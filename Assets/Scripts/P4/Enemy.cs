@@ -16,7 +16,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.AttackPlayer(); // Call the method to attack the player
+        this.DeleteEnemy(); // Call the method to delete the enemy if it falls below a certain height
+    }
+
+    protected virtual void AttackPlayer()
+    {
         Vector3 lookDirection = (this.player.transform.position - transform.position).normalized;
         this.enemyRb.AddForce(lookDirection * this.speed);
+    }
+    
+    protected virtual void DeleteEnemy()
+    {
+        if(transform.position.y < -10)
+        {
+            Destroy(gameObject); // Destroy the enemy if it falls below a certain height
+        }
     }
 }
