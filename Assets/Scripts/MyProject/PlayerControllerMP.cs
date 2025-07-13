@@ -31,7 +31,7 @@ public class PlayerControllerMP : MonoBehaviour
         this.playerRb.AddForce(Vector3.right * this.inputHorizontal * this.speed);
         this.playerRb.AddForce(Vector3.forward * this.inputVertical * this.speed);
 
-   
+
     }
 
     protected virtual void ConstrainPlayerPosition()
@@ -52,6 +52,25 @@ public class PlayerControllerMP : MonoBehaviour
         if (transform.position.z > this.zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, this.zRange);
+        }
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            Debug.Log("Power-up collected!");
+            Destroy(other.gameObject); // Destroy the power-up object
+            // Activate power-up effect here
+        }
+    }
+    
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Collided with an enemy!");
+            // Handle collision with enemy here, e.g., reduce health or destroy player
         }
     }
 }
