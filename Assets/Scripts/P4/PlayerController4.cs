@@ -10,7 +10,7 @@ public class PlayerController4 : MonoBehaviour
 
 
     public float forwardInput;
-    public float Speed = 10f;
+    public float speed = 10f;
 
   
 
@@ -28,12 +28,23 @@ public class PlayerController4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.SpeedBuff(); // Check for speed buff input
         this.forwardInput = Input.GetAxis("Vertical");
-        this.playerRb.AddForce(this.focalPoint.transform.forward * this.forwardInput * this.Speed);
+        this.playerRb.AddForce(this.focalPoint.transform.forward * this.forwardInput * this.speed);
         this.powerupIndicator.transform.position = this.transform.position + new Vector3(0, -0.5f, 0); // Position the power-up indicator below the player
    
         // Cập nhật hướng của directionPoint theo hướng forward của focalPoint (camera)
       
+    }
+
+    protected virtual void SpeedBuff()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Speed buff activated!");
+            this.playerRb.AddForce(this.focalPoint.transform.forward * this.forwardInput * this.speed, ForceMode.Impulse); // 10f là lực, bạn có thể chỉnh
+
+        }
     }
 
 

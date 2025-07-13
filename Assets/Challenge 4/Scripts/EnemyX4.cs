@@ -6,12 +6,13 @@ public class EnemyX4 : MonoBehaviour
 {
     public float speed;
     private Rigidbody enemyRb;
-    private GameObject playerGoal;
+    public GameObject playerGoal;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        this.playerGoal = GameObject.Find("Player"); // Find the player goal object in the scene
     }
 
     // Update is called once per frame
