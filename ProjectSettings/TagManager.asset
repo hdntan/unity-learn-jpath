@@ -12,6 +12,8 @@ TagManager:
   - Sky
   - Powerup
   - Enemy
+  - Sensor
+  - Bad
   layers:
   - Default
   - TransparentFX

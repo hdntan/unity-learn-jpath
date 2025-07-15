@@ -150,8 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRb: {fileID: 0}
+  gameManager: {fileID: 0}
+  explosionParticle: {fileID: 2088871590894813759, guid: 745208c9d6e104225bd99e1ab894e3bb, type: 3}
   minSpeed: 12
   maxSpeed: 16
   maxTorque: 10
   xRange: 4
   ySpawnPos: -2
+  pointValue: 10

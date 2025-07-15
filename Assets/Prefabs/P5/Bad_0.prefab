@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2849946926856439362}
   m_Layer: 0
   m_Name: Bad_0
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,8 +150,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRb: {fileID: 0}
+  gameManager: {fileID: 0}
+  explosionParticle: {fileID: 625621707174889904, guid: ef43e5aef41c142fb85a7658a397dc75, type: 3}
   minSpeed: 12
   maxSpeed: 16
   maxTorque: 10
   xRange: 4
   ySpawnPos: -2
+  pointValue: -10
