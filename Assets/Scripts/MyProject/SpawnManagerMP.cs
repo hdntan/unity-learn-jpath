@@ -28,13 +28,13 @@ public class SpawnManagerMP : MonoBehaviour
 
     protected virtual void SpawnEnemies()
     {
-        for (int i = 0; i < this.prefabEnemies.Length; i++)
-        {
+        // for (int i = 0; i < this.prefabEnemies.Length; i++)
+        // {
             int enemyIndex = Random.Range(0, this.prefabEnemies.Length);
             Vector3 spawnPosition = new Vector3(Random.Range(-this.spawnRangeX, this.spawnRangeX), 0.5f, this.spawnRangeZ);
             GameObject newEnemy = Instantiate(this.prefabEnemies[enemyIndex], spawnPosition, this.prefabEnemies[enemyIndex].transform.rotation);
 
-        }
+        //}
     }
     
     protected virtual void SpawnPowerup()
